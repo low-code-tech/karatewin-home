@@ -3,33 +3,154 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Karate Win｜空手大会の運営と試合動画のサービス</title>
-<meta name="description" content="Karate Win は、空手の大会運営（タイマー・得点表示・トーナメント表・試合速報）と試合動画のサービスです。" />
-<!-- karatewin-home index.html v0.1 (2026-11-26): 準備中のページ。中身ができたら差し替える。 -->
+<title>Karate Win｜保護者の方へ 大会の選手登録の手順</title>
+<meta name="description" content="Karate Win の大会申込（選手登録）の手順を、画面の見本つきでご案内します。QR コードを読み取り、携帯電話の SMS で確認して、選手を登録します。" />
+<!-- karatewin-home index.html v1.0 (2026-11-26): 保護者向けの選手登録の手順（画面の見本つき）。画面の画像は架空の大会・選手名。 -->
 <style>
+  :root{--bg:#f2f4f8;--line:#d3d9e3;--line2:#7d8798;--txt:#141a26;--txt2:#2c3545;--txt3:#56607a;--navy:#0f1f3d;--blue:#0b57d0;--gold:#f3cf6b}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{min-height:100vh;display:flex;flex-direction:column;background:#f2f4f8;color:#141a26;line-height:1.8;font-size:17px;
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);line-height:1.85;font-size:17px;
        font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic","Meiryo",-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
-  header{background:#0f1f3d;color:#fff;padding:16px 20px}
-  .brand{font-size:20px;font-weight:900;letter-spacing:3px;color:#f3cf6b}
-  main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
-  .card{max-width:640px;width:100%;background:#fff;border:1px solid #d3d9e3;border-radius:16px;padding:36px 28px;text-align:center}
-  h1{font-size:28px;font-weight:900;margin-bottom:12px}
-  p{color:#2c3545;margin-bottom:10px}
-  .tag{display:inline-block;margin-bottom:18px;padding:4px 16px;border-radius:100px;background:#fff0c2;border:1px solid #d9a400;color:#5c4300;font-weight:800;font-size:15px}
-  footer{text-align:center;color:#56607a;font-size:14px;padding:18px}
+  a{color:var(--blue)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  header{background:var(--navy);color:#fff}
+  .hd{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:12px}
+  .brand{font-size:20px;font-weight:900;letter-spacing:3px;color:var(--gold)}
+  .hero{background:var(--navy);color:#fff;padding:26px 20px 40px}
+  .hero-in{max-width:1040px;margin:0 auto}
+  .hero .tag{display:inline-block;padding:3px 14px;border-radius:100px;background:#fff;color:var(--navy);font-weight:800;font-size:15px;margin-bottom:12px}
+  .hero h1{font-size:30px;line-height:1.45;font-weight:900;margin-bottom:12px}
+  .hero p{font-size:18px;color:#dbe3f2}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .toc a{color:#fff;text-decoration:none;border:2px solid #4a5d86;border-radius:10px;padding:8px 14px;font-weight:800;font-size:15px}
+  main{max-width:1040px;margin:0 auto;padding:28px 16px 10px}
+  section{margin-bottom:34px}
+  h2{font-size:25px;font-weight:900;margin:0 4px 14px;padding-left:12px;border-left:6px solid var(--navy);line-height:1.4}
+  .lead{margin:0 4px 16px;color:var(--txt2)}
+  .need{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:18px}
+  .need ul{margin-left:1.3em}
+  .need li{margin:4px 0}
+  ol.steps{list-style:none}
+  .step{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}
+  .step-text{position:relative;padding-left:58px}
+  .no{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:21px;font-weight:900;line-height:1.45;margin:6px 0 8px}
+  .step p{color:var(--txt2)}
+  .shot{margin:0}
+  .shot img{display:block;width:100%;max-width:300px;height:auto;margin:0 auto;border:8px solid #1d2433;border-radius:26px;background:#fff}
+  .qrcard{max-width:300px;margin:0 auto;border:2px dashed var(--line2);border-radius:16px;padding:16px;text-align:center;background:#fff}
+  .qrcard svg{display:block;margin:0 auto 6px}
+  .qrcard p{font-weight:900;font-size:18px}
+  .qrcard small{color:var(--txt3);font-size:13px}
+  .note{margin:6px 4px 0;color:var(--txt3);font-size:14px}
+  .after{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+  .after h3{font-size:21px;font-weight:900;margin-bottom:8px}
+  .after p{color:var(--txt2);margin-bottom:10px}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+  .faq summary{cursor:pointer;padding:16px 20px;font-weight:900;font-size:18px;list-style:none;position:relative;padding-right:48px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"＋";position:absolute;right:20px;top:14px;font-size:20px;color:var(--txt3)}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{padding:0 20px 18px;color:var(--txt2)}
+  footer{text-align:center;color:var(--txt3);font-size:14px;padding:24px 16px 32px;border-top:1px solid var(--line);margin-top:10px}
+  @media (max-width:760px){
+    body{font-size:16px}
+    .hero h1{font-size:22px}
+    .step-text{padding-left:0}
+    .no{position:static;display:inline-flex;width:38px;height:38px;font-size:19px;margin-bottom:4px}
+    .step h3{font-size:19px;margin-top:2px}
+    .step,.after{grid-template-columns:1fr;padding:18px}
+    .shot img,.qrcard{max-width:260px}
+  }
 </style>
 </head>
 <body>
-<header><span class="brand">KARATE WIN</span></header>
+<header><div class="hd"><span class="brand">KARATE WIN</span></div></header>
+
+<div class="hero"><div class="hero-in">
+  <span class="tag">保護者の方へ</span>
+  <h1>大会の選手登録は、<br>スマートフォンで簡単にできます</h1>
+  <p>QR コードを読み取り、携帯電話の SMS で確認して、選手を登録します。<br>このページでは、その手順を画面の見本つきでご案内します。</p>
+  <nav class="toc" aria-label="このページの内容">
+    <a href="#prepare">用意するもの</a><a href="#steps">登録の手順</a><a href="#after">大会当日</a><a href="#faq">よくある質問</a>
+  </nav>
+</div></div>
+
 <main>
-  <div class="card">
-    <span class="tag">ただいま準備中です</span>
-    <h1>Karate Win</h1>
-    <p>空手の大会運営（タイマー・得点表示・トーナメント表・試合速報）と、<br>試合動画のサービスです。</p>
-    <p>くわしいご案内は、近日このページに掲載します。</p>
-  </div>
+  <section id="prepare">
+    <h2>用意するもの</h2>
+    <div class="need"><ul>
+      <li>保護者の方の<b>携帯電話</b>（SMS を受け取れるもの。固定電話は使えません）</li>
+      <li>大会のパンフレットや申込案内にある <b>QR コード</b></li>
+      <li>選手の<b>学年・所属道場</b>と、出場したい<b>種目</b>（組手・形）</li>
+    </ul></div>
+  </section>
+
+  <section id="steps">
+    <h2>選手登録の手順</h2>
+    <p class="lead">5分ほどで終わります。画面の画像は見本です。大会名やクラスは大会ごとに変わります。</p>
+    <ol class="steps">
+    <li class="step" id="step1">
+      <div class="step-text"><span class="no" aria-hidden="true">1</span><h3><span class="sr">手順1　</span>QR コードを読み取る</h3><p>大会のパンフレットや申込案内にある QR コードを、スマートフォンのカメラで読み取ります。申込の画面が開きます。</p></div>
+      <figure class="shot qr"><div class="qrcard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 198" width="160" height="160" role="img" aria-label="見本のQRコード"><rect width="198" height="198" fill="#fff"/><path d="M24 24h6v6h-6zM30 24h6v6h-6zM36 24h6v6h-6zM42 24h6v6h-6zM48 24h6v6h-6zM54 24h6v6h-6zM60 24h6v6h-6zM72 24h6v6h-6zM78 24h6v6h-6zM102 24h6v6h-6zM108 24h6v6h-6zM132 24h6v6h-6zM138 24h6v6h-6zM144 24h6v6h-6zM150 24h6v6h-6zM156 24h6v6h-6zM162 24h6v6h-6zM168 24h6v6h-6zM24 30h6v6h-6zM60 30h6v6h-6zM72 30h6v6h-6zM90 30h6v6h-6zM102 30h6v6h-6zM132 30h6v6h-6zM168 30h6v6h-6zM24 36h6v6h-6zM36 36h6v6h-6zM42 36h6v6h-6zM48 36h6v6h-6zM60 36h6v6h-6zM72 36h6v6h-6zM90 36h6v6h-6zM96 36h6v6h-6zM102 36h6v6h-6zM108 36h6v6h-6zM114 36h6v6h-6zM132 36h6v6h-6zM144 36h6v6h-6zM150 36h6v6h-6zM156 36h6v6h-6zM168 36h6v6h-6zM24 42h6v6h-6zM36 42h6v6h-6zM42 42h6v6h-6zM48 42h6v6h-6zM60 42h6v6h-6zM84 42h6v6h-6zM90 42h6v6h-6zM102 42h6v6h-6zM132 42h6v6h-6zM144 42h6v6h-6zM150 42h6v6h-6zM156 42h6v6h-6zM168 42h6v6h-6zM24 48h6v6h-6zM36 48h6v6h-6zM42 48h6v6h-6zM48 48h6v6h-6zM60 48h6v6h-6zM72 48h6v6h-6zM96 48h6v6h-6zM120 48h6v6h-6zM132 48h6v6h-6zM144 48h6v6h-6zM150 48h6v6h-6zM156 48h6v6h-6zM168 48h6v6h-6zM24 54h6v6h-6zM60 54h6v6h-6zM84 54h6v6h-6zM96 54h6v6h-6zM102 54h6v6h-6zM108 54h6v6h-6zM132 54h6v6h-6zM168 54h6v6h-6zM24 60h6v6h-6zM30 60h6v6h-6zM36 60h6v6h-6zM42 60h6v6h-6zM48 60h6v6h-6zM54 60h6v6h-6zM60 60h6v6h-6zM72 60h6v6h-6zM84 60h6v6h-6zM96 60h6v6h-6zM108 60h6v6h-6zM120 60h6v6h-6zM132 60h6v6h-6zM138 60h6v6h-6zM144 60h6v6h-6zM150 60h6v6h-6zM156 60h6v6h-6zM162 60h6v6h-6zM168 60h6v6h-6zM84 66h6v6h-6zM96 66h6v6h-6zM102 66h6v6h-6zM24 72h6v6h-6zM42 72h6v6h-6zM48 72h6v6h-6zM54 72h6v6h-6zM60 72h6v6h-6zM66 72h6v6h-6zM72 72h6v6h-6zM96 72h6v6h-6zM108 72h6v6h-6zM114 72h6v6h-6zM120 72h6v6h-6zM126 72h6v6h-6zM144 72h6v6h-6zM156 72h6v6h-6zM162 72h6v6h-6zM168 72h6v6h-6zM24 78h6v6h-6zM30 78h6v6h-6zM42 78h6v6h-6zM54 78h6v6h-6zM66 78h6v6h-6zM72 78h6v6h-6zM78 78h6v6h-6zM84 78h6v6h-6zM96 78h6v6h-6zM102 78h6v6h-6zM108 78h6v6h-6zM114 78h6v6h-6zM126 78h6v6h-6zM138 78h6v6h-6zM144 78h6v6h-6zM150 78h6v6h-6zM156 78h6v6h-6zM162 78h6v6h-6zM24 84h6v6h-6zM36 84h6v6h-6zM48 84h6v6h-6zM60 84h6v6h-6zM72 84h6v6h-6zM78 84h6v6h-6zM108 84h6v6h-6zM114 84h6v6h-6zM132 84h6v6h-6zM138 84h6v6h-6zM150 84h6v6h-6zM168 84h6v6h-6zM24 90h6v6h-6zM36 90h6v6h-6zM48 90h6v6h-6zM54 90h6v6h-6zM66 90h6v6h-6zM72 90h6v6h-6zM78 90h6v6h-6zM108 90h6v6h-6zM114 90h6v6h-6zM120 90h6v6h-6zM138 90h6v6h-6zM150 90h6v6h-6zM156 90h6v6h-6zM162 90h6v6h-6zM168 90h6v6h-6zM30 96h6v6h-6zM36 96h6v6h-6zM48 96h6v6h-6zM60 96h6v6h-6zM78 96h6v6h-6zM96 96h6v6h-6zM114 96h6v6h-6zM132 96h6v6h-6zM168 96h6v6h-6zM24 102h6v6h-6zM30 102h6v6h-6zM36 102h6v6h-6zM42 102h6v6h-6zM54 102h6v6h-6zM66 102h6v6h-6zM72 102h6v6h-6zM78 102h6v6h-6zM96 102h6v6h-6zM108 102h6v6h-6zM114 102h6v6h-6zM120 102h6v6h-6zM126 102h6v6h-6zM144 102h6v6h-6zM162 102h6v6h-6zM24 108h6v6h-6zM30 108h6v6h-6zM42 108h6v6h-6zM54 108h6v6h-6zM60 108h6v6h-6zM66 108h6v6h-6zM84 108h6v6h-6zM108 108h6v6h-6zM114 108h6v6h-6zM126 108h6v6h-6zM132 108h6v6h-6zM144 108h6v6h-6zM150 108h6v6h-6zM156 108h6v6h-6zM162 108h6v6h-6zM168 108h6v6h-6zM24 114h6v6h-6zM42 114h6v6h-6zM48 114h6v6h-6zM78 114h6v6h-6zM84 114h6v6h-6zM90 114h6v6h-6zM108 114h6v6h-6zM120 114h6v6h-6zM126 114h6v6h-6zM138 114h6v6h-6zM150 114h6v6h-6zM156 114h6v6h-6zM168 114h6v6h-6zM24 120h6v6h-6zM42 120h6v6h-6zM60 120h6v6h-6zM66 120h6v6h-6zM78 120h6v6h-6zM84 120h6v6h-6zM96 120h6v6h-6zM102 120h6v6h-6zM108 120h6v6h-6zM114 120h6v6h-6zM120 120h6v6h-6zM126 120h6v6h-6zM132 120h6v6h-6zM138 120h6v6h-6zM144 120h6v6h-6zM156 120h6v6h-6zM162 120h6v6h-6zM72 126h6v6h-6zM84 126h6v6h-6zM96 126h6v6h-6zM102 126h6v6h-6zM120 126h6v6h-6zM144 126h6v6h-6zM156 126h6v6h-6zM162 126h6v6h-6zM24 132h6v6h-6zM30 132h6v6h-6zM36 132h6v6h-6zM42 132h6v6h-6zM48 132h6v6h-6zM54 132h6v6h-6zM60 132h6v6h-6zM72 132h6v6h-6zM78 132h6v6h-6zM84 132h6v6h-6zM90 132h6v6h-6zM120 132h6v6h-6zM132 132h6v6h-6zM144 132h6v6h-6zM168 132h6v6h-6zM24 138h6v6h-6zM60 138h6v6h-6zM72 138h6v6h-6zM78 138h6v6h-6zM84 138h6v6h-6zM102 138h6v6h-6zM108 138h6v6h-6zM114 138h6v6h-6zM120 138h6v6h-6zM144 138h6v6h-6zM24 144h6v6h-6zM36 144h6v6h-6zM42 144h6v6h-6zM48 144h6v6h-6zM60 144h6v6h-6zM72 144h6v6h-6zM78 144h6v6h-6zM90 144h6v6h-6zM96 144h6v6h-6zM108 144h6v6h-6zM114 144h6v6h-6zM120 144h6v6h-6zM126 144h6v6h-6zM132 144h6v6h-6zM138 144h6v6h-6zM144 144h6v6h-6zM24 150h6v6h-6zM36 150h6v6h-6zM42 150h6v6h-6zM48 150h6v6h-6zM60 150h6v6h-6zM72 150h6v6h-6zM84 150h6v6h-6zM90 150h6v6h-6zM108 150h6v6h-6zM114 150h6v6h-6zM132 150h6v6h-6zM162 150h6v6h-6zM168 150h6v6h-6zM24 156h6v6h-6zM36 156h6v6h-6zM42 156h6v6h-6zM48 156h6v6h-6zM60 156h6v6h-6zM84 156h6v6h-6zM90 156h6v6h-6zM102 156h6v6h-6zM108 156h6v6h-6zM114 156h6v6h-6zM120 156h6v6h-6zM126 156h6v6h-6zM144 156h6v6h-6zM150 156h6v6h-6zM156 156h6v6h-6zM162 156h6v6h-6zM168 156h6v6h-6zM24 162h6v6h-6zM60 162h6v6h-6zM78 162h6v6h-6zM108 162h6v6h-6zM138 162h6v6h-6zM144 162h6v6h-6zM156 162h6v6h-6zM162 162h6v6h-6zM168 162h6v6h-6zM24 168h6v6h-6zM30 168h6v6h-6zM36 168h6v6h-6zM42 168h6v6h-6zM48 168h6v6h-6zM54 168h6v6h-6zM60 168h6v6h-6zM72 168h6v6h-6zM78 168h6v6h-6zM96 168h6v6h-6zM120 168h6v6h-6zM126 168h6v6h-6zM150 168h6v6h-6zM168 168h6v6h-6z" fill="#141a26"/></svg><p>大会申込はこちら</p><small>パンフレットの QR コード（見本）</small></div></figure>
+    </li>
+    <li class="step" id="step2">
+      <div class="step-text"><span class="no" aria-hidden="true">2</span><h3><span class="sr">手順2　</span>大会の内容を確かめて「申込をはじめる」</h3><p>大会名・開催日・会場・申込締切が出ます。内容を確かめて、下の「申込をはじめる」を押します。</p></div>
+      <figure class="shot"><img src="images/step1-info.jpg" alt="大会の内容を確かめて「申込をはじめる」の画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    <li class="step" id="step3">
+      <div class="step-text"><span class="no" aria-hidden="true">3</span><h3><span class="sr">手順3　</span>保護者の携帯電話番号を入れる</h3><p>保護者の方の携帯電話番号を入れます。固定電話は使えません。<br>1つ目のチェック（個人情報の取り扱いへの同意）は必須です。2つ目（試合動画のお知らせを SMS で受け取る）は任意で、あとから止められます。入れたら「認証コードを送る」を押します。</p></div>
+      <figure class="shot"><img src="images/step2-phone.jpg" alt="保護者の携帯電話番号を入れるの画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    <li class="step" id="step4">
+      <div class="step-text"><span class="no" aria-hidden="true">4</span><h3><span class="sr">手順4　</span>SMS で届いた6桁の数字を入れる</h3><p>入れた携帯電話に、6桁の認証コードが SMS で届きます。その数字を入れて「確認する」を押します。コードの有効時間は10分です。届かないときは、60秒たつと「コードを送り直す」を押せます。</p></div>
+      <figure class="shot"><img src="images/step3-code.jpg" alt="SMS で届いた6桁の数字を入れるの画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    <li class="step" id="step5">
+      <div class="step-text"><span class="no" aria-hidden="true">5</span><h3><span class="sr">手順5　</span>「選手を登録する」を押す</h3><p>申込済みの選手の一覧が出ます。はじめは0名です。「選手を登録する」を押します。</p></div>
+      <figure class="shot"><img src="images/step4-list-empty.jpg" alt="「選手を登録する」を押すの画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    <li class="step" id="step6">
+      <div class="step-text"><span class="no" aria-hidden="true">6</span><h3><span class="sr">手順6　</span>選手の情報を入れる</h3><p>選手名とよみがな（ひらがな）、学年、性別、所属道場を入れます。学年と性別を選ぶと、出場できるクラスが出るので、組手・形の出たい種目にチェックを入れてクラスを選びます。<br>戦歴（ベスト8以上）は任意です。入れたら「確認へ進む」を押します。</p></div>
+      <figure class="shot"><img src="images/step5-form.jpg" alt="選手の情報を入れるの画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    <li class="step" id="step7">
+      <div class="step-text"><span class="no" aria-hidden="true">7</span><h3><span class="sr">手順7　</span>内容を確かめて申し込む</h3><p>入れた内容が一覧で出ます。間違いがなければ「この内容で申し込む」を押します。直すときは「入力に戻る」を押します。</p></div>
+      <figure class="shot"><img src="images/step6-confirm.jpg" alt="内容を確かめて申し込むの画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    <li class="step" id="step8">
+      <div class="step-text"><span class="no" aria-hidden="true">8</span><h3><span class="sr">手順8　</span>申込の完了</h3><p>一覧に選手が「申込済み」で出れば完了です。ご兄弟も出場する場合は、続けて「ご兄弟など、選手を追加する」から1人ずつ登録します。</p></div>
+      <figure class="shot"><img src="images/step7-done.jpg" alt="申込の完了の画面（見本）" loading="lazy" width="390"></figure>
+    </li>
+    </ol>
+    <p class="note">申込の締切までは、同じ QR コードから同じ携帯電話番号で入り直すと、内容を直したり取り消したりできます。</p>
+  </section>
+
+  <section id="after">
+    <h2>大会当日：試合速報が届きます</h2>
+    <div class="after">
+      <div>
+        <h3>お子さまの試合を、スマートフォンで</h3>
+        <p>大会当日は、登録した携帯電話に「試合速報」の URL を SMS でお送りします。送信元は「KarateWin」です。</p>
+        <p>開くと、お子さまのクラスのトーナメント表が出ます。お子さまの行には印が付き、勝ち上がりが赤い線で、得点とあわせて自動で更新されます。</p>
+        <p>この URL は保護者の方ごとに違います。ほかの方に広めないでください。</p>
+      </div>
+      <figure class="shot"><img src="images/step8-live.jpg" alt="試合速報の画面（見本）" loading="lazy" width="390"></figure>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>よくある質問</h2>
+    <details><summary>ご兄弟を申し込むときは？</summary><p>同じ携帯電話番号で、選手を1人ずつ登録してください。1つの携帯電話番号で5名まで登録できます。</p></details>
+    <details><summary>申し込んだあとに直したいときは？</summary><p>申込の締切までは、同じ QR コードから同じ携帯電話番号で入り直すと、「修正する」「取り消す」ができます。締切のあとは、大会事務局へご連絡ください。</p></details>
+    <details><summary>認証コードの SMS が届きません</summary><p>番号に誤りがないか確かめてください。迷惑メッセージの設定で、知らない送信元の SMS を受け取らない設定になっていると届かないことがあります。60秒たつと、コードを送り直せます。</p></details>
+    <details><summary>携帯電話番号は何に使われますか？</summary><p>申込をした方ご本人であることの確認と、大会の運営・連絡に使います。番号は暗号化して保存し、画面には表示しません。試合動画のお知らせは、受け取ることに同意された方にだけお送りし、いつでも止められます。</p></details>
+    <details><summary>道場でまとめて申し込んでもらった場合は？</summary><p>道場からの一括申込でも、保護者の方の携帯電話番号をお届けいただいています。大会当日の試合速報の URL を、その番号へ SMS でお送りします。</p></details>
+    <p class="note">大会の内容（日程・会場・クラス・参加費など）は、各大会の事務局へお問い合わせください。</p>
+  </section>
 </main>
-<footer>運営：株式会社ローコードテック</footer>
+
+<footer>Karate Win ／ 運営：株式会社ローコードテック</footer>
 </body>
 </html>
